@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reactive;
 
 namespace MarbleTest.Net
 {
@@ -7,6 +8,6 @@ namespace MarbleTest.Net
         void ToBe(string marble, 
             object values = null, 
             Exception errorValue = null,
-            Func<object, object, bool> comparer = null);
+            Func<Notification<object>, Notification<object>, bool> comparer = null);
     }
 }

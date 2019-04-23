@@ -134,12 +134,11 @@ namespace MarbleTest.Net
                 _frameTimeFactor = frameTimeFactor;
             }
 
-            public void ToBe(string marble, object values, Exception errorValue, Func<object, object, bool> comparer = null)
+            public void ToBe(string marble, object values, Exception errorValue, Func<Notification<object>, Notification<object>, bool> comparer = null)
             {
                 _flushTest.Ready = true;
                 _flushTest.Expected = Parser.ParseMarbles<object>(marble, values, errorValue, _frameTimeFactor, true);
-                _flushTest.Comparer =
-                    comparer ?? new Func<object, object, bool>((actual, expected) => actual == expected);
+                _flushTest.Comparer = comparer ?? ((actual, expected) => actual == expected);
             }
         }
 
@@ -153,7 +152,7 @@ namespace MarbleTest.Net
             public bool Ready { get; set; }
             public IList<Recorded<Notification<object>>> Actual { get; set; }
             public IList<Recorded<Notification<object>>> Expected { get; set; }
-            public Func<object, object, bool> Comparer { get; set; }
+            public Func<Notification<object>, Notification<object>, bool> Comparer { get; set; }
 
             private readonly Type _notificationsType = typeof(IList<Recorded<Notification<object>>>);
 
