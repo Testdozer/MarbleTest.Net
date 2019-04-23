@@ -16,11 +16,10 @@ test_script:
 after_test:
   - cd ..
   - dotnet pack MarbleTest.Net -c release -o %appveyor_build_folder%\dist /p:PackageName=MarbleTest.Net.DeepComparation
-  - cd %appveyor_build_folder%\dist
-  - ls
 
 deploy:
   provider: NuGet
   api_key:
     secure: eZfmf6WPntyOjPsMFVUdite2ajDpLw7K/eK8fuCU13ZtBOacAgUazFlAwbHWQPXb
   skip_symbols: true
+  artifact: /%appveyor_build_folder%\dist\.nupkg/

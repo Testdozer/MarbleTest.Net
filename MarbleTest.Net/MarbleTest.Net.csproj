@@ -4,10 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Version>1.5.0</Version>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/alexvictoor/MarbleTest.Net</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/dvabuzyarov/MarbleTest.Net</PackageProjectUrl>
     <Copyright></Copyright>
     <Description>Rx tests with marle diagrams in ASCII form</Description>
-    <Authors>Alexandre Victoor, Alexandre Hertogs</Authors>
+    <Authors>Alexandre Victoor, Alexandre Hertogs, Abuzyarod V. Dmitry</Authors>
+    <PackageId>MarbleTest.Net.DeepComparation</PackageId>
+    <PackageVersion />
   </PropertyGroup>
 
   <ItemGroup>
