@@ -14,6 +14,7 @@ test_script:
   - dotnet test
 
 after_test:
+  - cd ..
   - dotnet publish MarbleTest.Net -c release -o %appveyor_build_folder%\dist
 
 deploy:
