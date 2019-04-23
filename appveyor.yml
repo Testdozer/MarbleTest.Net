@@ -18,8 +18,8 @@ after_test:
   - dotnet pack MarbleTest.Net -c release -o %appveyor_build_folder%\dist /p:PackageName=MarbleTest.Net.DeepComparation
 
 artifacts:
-  – path: %appveyor_build_folder%\dist\*.*
-  name: nuget
+  - path: %appveyor_build_folder%\dist\
+    name: nuget
 
 deploy:
   provider: NuGet
