@@ -19,6 +19,7 @@ after_test:
 
 artifacts:
   – path: %appveyor_build_folder%\dist\*.*
+  name: nuget
 
 deploy:
   provider: NuGet
