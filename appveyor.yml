@@ -18,7 +18,7 @@ after_test:
   - dotnet pack MarbleTest.Net -c release -o %appveyor_build_folder%\dist
 
 artifacts:
-  -path: dist\*.nupkg
+  path: dist\*.nupkg
   name: nuget
 
 deploy:
