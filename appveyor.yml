@@ -1,5 +1,11 @@
 image: Visual Studio 2017
 
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  
 build_script:
   - dotnet build -c release
 
@@ -7,5 +13,12 @@ test_script:
   - cd MarbleTest.Net.Test
   - dotnet test
 
-after_build:
+after_test:
   - dotnet publish MarbleTest.Net -c release -o %appveyor_build_folder%\dist
+
+deploy:
+  provider: NuGet
+  api_key:
+    secure: eZfmf6WPntyOjPsMFVUdite2ajDpLw7K/eK8fuCU13ZtBOacAgUazFlAwbHWQPXb
+  skip_symbols: false
+  artifact: /.*\.nupkg/
