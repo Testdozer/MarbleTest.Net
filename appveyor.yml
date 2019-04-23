@@ -15,7 +15,7 @@ test_script:
 
 after_test:
   - cd ..
-  - dotnet publish MarbleTest.Net -c release -o %appveyor_build_folder%\dist
+  - dotnet pack MarbleTest.Net -c release -o %appveyor_build_folder%\dist /p:PackageName=MarbleTest.Net.DeepComparation
 
 deploy:
   provider: NuGet
