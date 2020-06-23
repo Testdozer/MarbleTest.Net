@@ -9,6 +9,8 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 
+clone_folder: c:\projects\marbles
+
 build_script:
   - dotnet restore
   - dotnet build -c release
